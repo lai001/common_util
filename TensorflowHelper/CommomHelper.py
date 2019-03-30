@@ -40,3 +40,7 @@ def read_csv_file(file: str) -> tf.Tensor:
     iterator = dataset.make_one_shot_iterator()
     text = iterator.get_next()
     return text
+    
+def view_gpu_and_cpu():
+    from tensorflow.python.client import device_lib
+    print(device_lib.list_local_devices())
